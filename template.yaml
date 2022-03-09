@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 60
+    Description: Created lambda function using SAM Template
+    MemorySize: 128
+    Runtime: python3.8
+    Tags:
+      Name: raju-dev
+      
+
+Resources: 
+  rajuTestFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_handler.handler
+      CodeUri: ./lambda_code/
